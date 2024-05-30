@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .yes-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .no-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .celebration {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Marry Me?</h1>
+        <div class="buttons">
+            <button class="button yes-button" id="yesButton">Yes</button>
+            <button class="button no-button" id="noButton">No</button>
+        </div>
+        <div class="celebration" id="celebration">🎉 Congratulations! 🎉</div>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const celebration = document.getElementById('celebration');
+
+        yesButton.addEventListener('click', () => {
+            celebration.style.display = 'block';
+        });
+
+        noButton.addEventListener('click', () => {
+            noButton.textContent = 'Yes';
+            noButton.classList.remove('no-button');
+            noButton.classList.add('yes-button');
+            noButton.onclick = () => {
+                celebration.style.display = 'block';
+            };
+        });
+    </script>
+</body>
+</html>
